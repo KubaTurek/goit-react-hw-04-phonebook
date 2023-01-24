@@ -1,5 +1,5 @@
 import {useEffect} from 'react';
-import { usePhonebookContext } from './../context';
+import { usePhonebookContext } from '../PhonebookContext/PhonebookContext';
 import css from './App.module.css';
 import ContactForm from './ContactForm/ContactForm';
 import ContactList from './ContactList/ContactList';
@@ -19,7 +19,6 @@ useEffect(() => {
 
   setContacts(localStorageContacts)
    
-console.log("mounting")
   }
 
 }, [setContacts]);
@@ -38,10 +37,10 @@ console.log("mounting")
 
     return (
       <div className={css.app}>
-        <Section tittle="Phonebook">
+        <Section title="Phonebook">
           <ContactForm />
         </Section>
-        <Section tittle="Contacts">
+        <Section title="Contacts">
           <Filter />
           <ContactList  />
         </Section>

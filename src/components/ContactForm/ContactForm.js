@@ -1,5 +1,5 @@
 import css from './ContactForm.module.css';
-import { usePhonebookContext } from './../../context/';
+import { usePhonebookContext } from '../../PhonebookContext/PhonebookContext'
 import { nanoid } from 'nanoid';
 
 const ContactForm = () => {
@@ -19,11 +19,9 @@ const ContactForm = () => {
         contact => contact.name.toLowerCase() === newContact.name.toLowerCase()
       )
     ) {
-
       event.target.name.value = '';
       event.target.number.value = '';
       return alert(`${newContact.name} "is already in contacts"`);
-      
     } else {
       addContact(newContact);
 

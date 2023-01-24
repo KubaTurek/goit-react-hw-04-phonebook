@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from 'react';
 import { nanoid } from 'nanoid';
-
+import PropTypes from 'prop-types'
 export const PhonebookContext = createContext();
 
 export const usePhonebookContext = () => useContext(PhonebookContext);
@@ -20,9 +20,8 @@ export const PhonebookProvider = ({ children }) => {
   };
 
   const deleteContacts = id => {
-
-    setContacts(contacts.filter(contact => contact.id !== id))
-  }
+    setContacts(contacts.filter(contact => contact.id !== id));
+  };
 
   const selectFilter = value => {
     setFilter(value);
@@ -30,9 +29,20 @@ export const PhonebookProvider = ({ children }) => {
 
   return (
     <PhonebookContext.Provider
-      value={{ contacts, setContacts, filter, addContact, selectFilter, deleteContacts}}
+      value={{
+        contacts,
+        setContacts,
+        filter,
+        addContact,
+        selectFilter,
+        deleteContacts,
+      }}
     >
       {children}
     </PhonebookContext.Provider>
   );
 };
+
+PhonebookProvider.propTypes = {
+  children: PropTypes.node
+}
