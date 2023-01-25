@@ -1,5 +1,5 @@
 import css from './Filter.module.css';
-import { usePhonebookContext } from '../../PhonebookContext/PhonebookContext';
+import { usePhonebookContext } from '../../Context/PhonebookContext';
 
 const Filter = () => {
   const { selectFilter } = usePhonebookContext();

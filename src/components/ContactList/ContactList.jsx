@@ -1,5 +1,5 @@
 import css from './ContactList.module.css';
-import { usePhonebookContext } from '../../PhonebookContext/PhonebookContext';
+import { usePhonebookContext } from '../../Context/PhonebookContext';
 
 const ContactList = () => {
   const { contacts, filter, deleteContacts } = usePhonebookContext();
