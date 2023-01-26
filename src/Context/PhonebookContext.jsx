@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from 'react';
 import { nanoid } from 'nanoid';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 export const PhonebookContext = createContext();
 
 export const usePhonebookContext = () => useContext(PhonebookContext);
@@ -44,5 +44,5 @@ export const PhonebookProvider = ({ children }) => {
 };
 
 PhonebookProvider.propTypes = {
-  children: PropTypes.node
-}
+  children: PropTypes.node,
+};
