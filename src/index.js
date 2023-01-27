@@ -5,7 +5,9 @@ import './index.css';
 import { PhonebookProvider } from './Context/PhonebookContext';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
   <PhonebookProvider>
     <App />
   </PhonebookProvider>
+  </React.StrictMode>
 );
